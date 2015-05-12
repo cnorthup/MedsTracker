@@ -1,0 +1,439 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		17AB9881028C9626252A241E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C6A2F1AC3067FCF4639F7E4 /* Foundation.framework */; };
+		18FB47375015417BFE20D509 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADB851522E40F3B7758EBF83 /* QuartzCore.framework */; };
+		4F8C288F0E08CD6B6A881AFD /* MTBBarcodeScanner.h in Headers */ = {isa = PBXBuildFile; fileRef = A8D5D98C43E26BC0772AD3DC /* MTBBarcodeScanner.h */; };
+		5AE98A27150F3BE60B34EA2A /* MTBBarcodeScanner.m in Sources */ = {isa = PBXBuildFile; fileRef = 978D3085AF054BD787EE2B52 /* MTBBarcodeScanner.m */; };
+		6A25EE12FB4898518282223E /* Pods-MedsTracker-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = CFCC5B59F4CD3185810132D7 /* Pods-MedsTracker-dummy.m */; };
+		8797F4535685282BDF88F7B8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C6A2F1AC3067FCF4639F7E4 /* Foundation.framework */; };
+		A9E8366CD557C247DDF37E1B /* Pods-MedsTracker-MTBBarcodeScanner-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 098EAB8F248CA902952CDC93 /* Pods-MedsTracker-MTBBarcodeScanner-dummy.m */; };
+		B8C7432E31DC475E22544111 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B0B465FE6C3D808D4BE56F4 /* AVFoundation.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		69F135CD8DD2D7C5DD12BE57 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5E9F1C679D8A265EA4A115F2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 59263E5E38E8A4BCD4F50EB2;
+			remoteInfo = "Pods-MedsTracker-MTBBarcodeScanner";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		098EAB8F248CA902952CDC93 /* Pods-MedsTracker-MTBBarcodeScanner-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-MedsTracker-MTBBarcodeScanner-dummy.m"; sourceTree = "<group>"; };
+		2B0B465FE6C3D808D4BE56F4 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/AVFoundation.framework; sourceTree = DEVELOPER_DIR; };
+		336FE2752912F10C2D229C98 /* Pods-MedsTracker-MTBBarcodeScanner-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-MedsTracker-MTBBarcodeScanner-prefix.pch"; sourceTree = "<group>"; };
+		344FDDCF1FAADAEF1D79A835 /* Pods-MedsTracker-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-MedsTracker-acknowledgements.markdown"; sourceTree = "<group>"; };
+		51A38128B8CD6AA649E048A1 /* libPods-MedsTracker-MTBBarcodeScanner.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MedsTracker-MTBBarcodeScanner.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		58237902EEC41035A097D88D /* Pods-MedsTracker-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-MedsTracker-resources.sh"; sourceTree = "<group>"; };
+		5C6A2F1AC3067FCF4639F7E4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		978D3085AF054BD787EE2B52 /* MTBBarcodeScanner.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MTBBarcodeScanner.m; path = Classes/ios/Scanners/MTBBarcodeScanner.m; sourceTree = "<group>"; };
+		9D4AC774FD3E208500CB493B /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		A8D5D98C43E26BC0772AD3DC /* MTBBarcodeScanner.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MTBBarcodeScanner.h; path = Classes/ios/Scanners/MTBBarcodeScanner.h; sourceTree = "<group>"; };
+		A9370C9D504CF76F66B995F7 /* Pods-MedsTracker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MedsTracker.release.xcconfig"; sourceTree = "<group>"; };
+		ADB851522E40F3B7758EBF83 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = DEVELOPER_DIR; };
+		AF77CC358E1B1D8ACC7E6BC2 /* Pods-MedsTracker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MedsTracker.debug.xcconfig"; sourceTree = "<group>"; };
+		B2D760155AF4869EB19166A4 /* libPods-MedsTracker.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MedsTracker.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B2F5A35D58FDA2DFC0224B71 /* Pods-MedsTracker-MTBBarcodeScanner-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MedsTracker-MTBBarcodeScanner-Private.xcconfig"; sourceTree = "<group>"; };
+		CFCC5B59F4CD3185810132D7 /* Pods-MedsTracker-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-MedsTracker-dummy.m"; sourceTree = "<group>"; };
+		D49DEDEB2E61CA359C3E779E /* Pods-MedsTracker-MTBBarcodeScanner.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MedsTracker-MTBBarcodeScanner.xcconfig"; sourceTree = "<group>"; };
+		DE4C86ACA997DB16A5ADB1E4 /* Pods-MedsTracker-environment.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-MedsTracker-environment.h"; sourceTree = "<group>"; };
+		F103BA118E856560079CD8CA /* Pods-MedsTracker-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-MedsTracker-acknowledgements.plist"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		254A3B65595EC2B0BDBC646E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B8C7432E31DC475E22544111 /* AVFoundation.framework in Frameworks */,
+				17AB9881028C9626252A241E /* Foundation.framework in Frameworks */,
+				18FB47375015417BFE20D509 /* QuartzCore.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E776B33823628D5D8F3D4262 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8797F4535685282BDF88F7B8 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1E9C10AB7BA1AD447A42B490 /* MTBBarcodeScanner */ = {
+			isa = PBXGroup;
+			children = (
+				A8D5D98C43E26BC0772AD3DC /* MTBBarcodeScanner.h */,
+				978D3085AF054BD787EE2B52 /* MTBBarcodeScanner.m */,
+				FB698464707995F0E3CFAB8F /* Support Files */,
+			);
+			path = MTBBarcodeScanner;
+			sourceTree = "<group>";
+		};
+		22F1235ADBE3803DFD74D7F2 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				6D631D9F85416DAB2676AFD6 /* Pods-MedsTracker */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		2F7AB08B699B9761705C79CA /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1E9C10AB7BA1AD447A42B490 /* MTBBarcodeScanner */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		6A717D47115D5AACAB199B18 = {
+			isa = PBXGroup;
+			children = (
+				9D4AC774FD3E208500CB493B /* Podfile */,
+				A5FB6B441C17D1AB3A5A32A7 /* Frameworks */,
+				2F7AB08B699B9761705C79CA /* Pods */,
+				C807D358B34FE1313C0E904A /* Products */,
+				22F1235ADBE3803DFD74D7F2 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		6D631D9F85416DAB2676AFD6 /* Pods-MedsTracker */ = {
+			isa = PBXGroup;
+			children = (
+				344FDDCF1FAADAEF1D79A835 /* Pods-MedsTracker-acknowledgements.markdown */,
+				F103BA118E856560079CD8CA /* Pods-MedsTracker-acknowledgements.plist */,
+				CFCC5B59F4CD3185810132D7 /* Pods-MedsTracker-dummy.m */,
+				DE4C86ACA997DB16A5ADB1E4 /* Pods-MedsTracker-environment.h */,
+				58237902EEC41035A097D88D /* Pods-MedsTracker-resources.sh */,
+				AF77CC358E1B1D8ACC7E6BC2 /* Pods-MedsTracker.debug.xcconfig */,
+				A9370C9D504CF76F66B995F7 /* Pods-MedsTracker.release.xcconfig */,
+			);
+			name = "Pods-MedsTracker";
+			path = "Target Support Files/Pods-MedsTracker";
+			sourceTree = "<group>";
+		};
+		85F9FBD44C87A7880C7D17BF /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				2B0B465FE6C3D808D4BE56F4 /* AVFoundation.framework */,
+				5C6A2F1AC3067FCF4639F7E4 /* Foundation.framework */,
+				ADB851522E40F3B7758EBF83 /* QuartzCore.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		A5FB6B441C17D1AB3A5A32A7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				85F9FBD44C87A7880C7D17BF /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C807D358B34FE1313C0E904A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B2D760155AF4869EB19166A4 /* libPods-MedsTracker.a */,
+				51A38128B8CD6AA649E048A1 /* libPods-MedsTracker-MTBBarcodeScanner.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FB698464707995F0E3CFAB8F /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				D49DEDEB2E61CA359C3E779E /* Pods-MedsTracker-MTBBarcodeScanner.xcconfig */,
+				B2F5A35D58FDA2DFC0224B71 /* Pods-MedsTracker-MTBBarcodeScanner-Private.xcconfig */,
+				098EAB8F248CA902952CDC93 /* Pods-MedsTracker-MTBBarcodeScanner-dummy.m */,
+				336FE2752912F10C2D229C98 /* Pods-MedsTracker-MTBBarcodeScanner-prefix.pch */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/Pods-MedsTracker-MTBBarcodeScanner";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		24DFE53101639C2983FB5064 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4F8C288F0E08CD6B6A881AFD /* MTBBarcodeScanner.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		59263E5E38E8A4BCD4F50EB2 /* Pods-MedsTracker-MTBBarcodeScanner */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AD1FFBA5BFB3E5487B7F8FF4 /* Build configuration list for PBXNativeTarget "Pods-MedsTracker-MTBBarcodeScanner" */;
+			buildPhases = (
+				EB2B1346F08C917720AE34FB /* Sources */,
+				254A3B65595EC2B0BDBC646E /* Frameworks */,
+				24DFE53101639C2983FB5064 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-MedsTracker-MTBBarcodeScanner";
+			productName = "Pods-MedsTracker-MTBBarcodeScanner";
+			productReference = 51A38128B8CD6AA649E048A1 /* libPods-MedsTracker-MTBBarcodeScanner.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		FBDEE381225824E45C27BAD1 /* Pods-MedsTracker */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 91F429E9006194A5235BEF0C /* Build configuration list for PBXNativeTarget "Pods-MedsTracker" */;
+			buildPhases = (
+				9379B2B6C0A3DB4A7CE45BEE /* Sources */,
+				E776B33823628D5D8F3D4262 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				79394627CC674FF3E753F908 /* PBXTargetDependency */,
+			);
+			name = "Pods-MedsTracker";
+			productName = "Pods-MedsTracker";
+			productReference = B2D760155AF4869EB19166A4 /* libPods-MedsTracker.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		5E9F1C679D8A265EA4A115F2 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0640;
+			};
+			buildConfigurationList = CDCBDB57668B1E470C2E5811 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 6A717D47115D5AACAB199B18;
+			productRefGroup = C807D358B34FE1313C0E904A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FBDEE381225824E45C27BAD1 /* Pods-MedsTracker */,
+				59263E5E38E8A4BCD4F50EB2 /* Pods-MedsTracker-MTBBarcodeScanner */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		9379B2B6C0A3DB4A7CE45BEE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6A25EE12FB4898518282223E /* Pods-MedsTracker-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EB2B1346F08C917720AE34FB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5AE98A27150F3BE60B34EA2A /* MTBBarcodeScanner.m in Sources */,
+				A9E8366CD557C247DDF37E1B /* Pods-MedsTracker-MTBBarcodeScanner-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		79394627CC674FF3E753F908 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-MedsTracker-MTBBarcodeScanner";
+			target = 59263E5E38E8A4BCD4F50EB2 /* Pods-MedsTracker-MTBBarcodeScanner */;
+			targetProxy = 69F135CD8DD2D7C5DD12BE57 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		5836B72F3B7E415B03D121D5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				ONLY_ACTIVE_ARCH = YES;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		6AA35E013001B3C827F3F9EF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = "RELEASE=1";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		909B81CF8E91D56DF51596DD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B2F5A35D58FDA2DFC0224B71 /* Pods-MedsTracker-MTBBarcodeScanner-Private.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-MedsTracker-MTBBarcodeScanner/Pods-MedsTracker-MTBBarcodeScanner-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		A4F3D746FB33E8E476338B4A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A9370C9D504CF76F66B995F7 /* Pods-MedsTracker.release.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		AC91CE90F36ACE7EB1B3A952 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AF77CC358E1B1D8ACC7E6BC2 /* Pods-MedsTracker.debug.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		F0257D149B004AC6B155DA37 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B2F5A35D58FDA2DFC0224B71 /* Pods-MedsTracker-MTBBarcodeScanner-Private.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-MedsTracker-MTBBarcodeScanner/Pods-MedsTracker-MTBBarcodeScanner-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		91F429E9006194A5235BEF0C /* Build configuration list for PBXNativeTarget "Pods-MedsTracker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AC91CE90F36ACE7EB1B3A952 /* Debug */,
+				A4F3D746FB33E8E476338B4A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AD1FFBA5BFB3E5487B7F8FF4 /* Build configuration list for PBXNativeTarget "Pods-MedsTracker-MTBBarcodeScanner" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				909B81CF8E91D56DF51596DD /* Debug */,
+				F0257D149B004AC6B155DA37 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CDCBDB57668B1E470C2E5811 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5836B72F3B7E415B03D121D5 /* Debug */,
+				6AA35E013001B3C827F3F9EF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 5E9F1C679D8A265EA4A115F2 /* Project object */;
+}
