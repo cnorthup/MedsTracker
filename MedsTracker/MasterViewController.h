@@ -14,5 +14,7 @@
 @property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
 @property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 
+-(void)updateMedication:(id)sender;
+
 @end
 

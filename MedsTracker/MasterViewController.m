@@ -69,9 +69,12 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([[segue identifier] isEqualToString:@"showDetail"]) {
+        DetailViewController* dVC = segue.destinationViewController;
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
         NSManagedObject *object = [[self fetchedResultsController] objectAtIndexPath:indexPath];
-        [[segue destinationViewController] setDetailItem:object];
+        [dVC setDetailItem:object];
+        Medication* med = (Medication*)object;
+        dVC.title = med.name;
     }
     else if ([[segue identifier] isEqualToString:@"createNewPill"])
     {
@@ -232,6 +235,14 @@
     [self.managedObjectContext save:nil];
     //Medication* med = sourceVC.detailItem;
     //[self.managedObjectContext save:nil];
+}
+
+-(void)updateMedication:(id)sender
+{
+    [self.managedObjectContext save:nil];
+    DetailViewController* vc = sender;
+    Medication* med = vc.detailItem;
+    NSLog(@"%@", med.lastTaken);
 }
 
 

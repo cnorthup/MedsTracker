@@ -75,42 +75,76 @@
                         <viewControllerLayoutGuide type="bottom" id="fHX-Jc-LDl"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="ThO-iE-Mv4">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Medication" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YgJ-gX-oa7">
                                 <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
                                 <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="34" y="129" width="97" height="30"/>
                                 </variation>
+                                <connections>
+                                    <outlet property="delegate" destination="1Ug-Vw-LKK" id="Pal-Um-jzS"/>
+                                </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Doses Left" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BaN-QL-fEf">
                                 <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" keyboardType="numberPad" enablesReturnKeyAutomatically="YES"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                                 <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="34" y="194" width="97" height="30"/>
                                 </variation>
+                                <connections>
+                                    <outlet property="delegate" destination="1Ug-Vw-LKK" id="xUR-hB-BMD"/>
+                                </connections>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="242-5v-bzq">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="59" y="247" width="46" height="30"/>
+                                </variation>
+                                <connections>
+                                    <action selector="scanBarcodeButton:" destination="1Ug-Vw-LKK" eventType="touchUpInside" id="iAS-D3-th0"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ohd-Fm-3uX">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="156" y="251" width="42" height="21"/>
+                                </variation>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="YgJ-gX-oa7"/>
                                 <exclude reference="BaN-QL-fEf"/>
+                                <exclude reference="242-5v-bzq"/>
+                                <exclude reference="ohd-Fm-3uX"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
                             <mask key="subviews">
                                 <include reference="YgJ-gX-oa7"/>
                                 <include reference="BaN-QL-fEf"/>
+                                <include reference="242-5v-bzq"/>
+                                <include reference="ohd-Fm-3uX"/>
                             </mask>
                         </variation>
                     </view>
                     <connections>
                         <outlet property="medicationNameTextField" destination="YgJ-gX-oa7" id="nii-1r-D0G"/>
                         <outlet property="pillsLeftTextField" destination="BaN-QL-fEf" id="HpN-xc-cod"/>
+                        <outlet property="scannedIndicator" destination="ohd-Fm-3uX" id="GPN-Mg-Sih"/>
                         <segue destination="5jW-ZA-HLj" kind="unwind" identifier="cancelMedication" unwindAction="cancelMedication:" id="HC8-jj-0W7"/>
                         <segue destination="5jW-ZA-HLj" kind="unwind" identifier="saveMedication" unwindAction="saveMedication:" id="C9W-83-LQP"/>
                     </connections>
@@ -131,7 +165,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Detail view content goes here" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="Lei-5M-9Gs">
+                            <label clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" text="Detail view content goes here" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="Lei-5M-9Gs">
                                 <rect key="frame" x="20" y="292" width="560" height="17"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" size="system"/>
@@ -168,6 +202,24 @@
                                     <rect key="frame" x="16" y="248" width="93" height="21"/>
                                 </variation>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dEr-he-2DH">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="Scan">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="39" y="307" width="35" height="30"/>
+                                </variation>
+                                <connections>
+                                    <action selector="scanPillButton:" destination="Ah7-4n-0Wa" eventType="touchUpInside" id="ccb-As-5kB"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Xg7-AU-cwG">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="117" y="234" width="57" height="49"/>
+                                </variation>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <variation key="default">
@@ -175,6 +227,8 @@
                                 <exclude reference="Glx-zi-kjZ"/>
                                 <exclude reference="xIL-hG-k4O"/>
                                 <exclude reference="Byz-kI-tmV"/>
+                                <exclude reference="dEr-he-2DH"/>
+                                <exclude reference="Xg7-AU-cwG"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
@@ -182,12 +236,15 @@
                                 <include reference="Glx-zi-kjZ"/>
                                 <include reference="xIL-hG-k4O"/>
                                 <include reference="Byz-kI-tmV"/>
+                                <include reference="dEr-he-2DH"/>
+                                <include reference="Xg7-AU-cwG"/>
                             </mask>
                         </variation>
                     </view>
                     <navigationItem key="navigationItem" title="Medication" id="cra-N8-TIN"/>
                     <connections>
                         <outlet property="detailDescriptionLabel" destination="Lei-5M-9Gs" id="sCT-F7-F6f"/>
+                        <outlet property="takenPillImageView" destination="Xg7-AU-cwG" id="4Cp-Xh-Phx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lrm-kH-fPn" sceneMemberID="firstResponder"/>
