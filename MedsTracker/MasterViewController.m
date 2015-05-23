@@ -73,7 +73,6 @@
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
         NSManagedObject *object = [[self fetchedResultsController] objectAtIndexPath:indexPath];
         [dVC setDetailItem:object];
-        Medication* med = (Medication*)object;
         dVC.source = self;
     }
     else if ([[segue identifier] isEqualToString:@"createNewPill"])
