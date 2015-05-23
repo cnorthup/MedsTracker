@@ -74,7 +74,7 @@
         NSManagedObject *object = [[self fetchedResultsController] objectAtIndexPath:indexPath];
         [dVC setDetailItem:object];
         Medication* med = (Medication*)object;
-        dVC.title = med.name;
+        dVC.source = self;
     }
     else if ([[segue identifier] isEqualToString:@"createNewPill"])
     {
@@ -239,10 +239,13 @@
 
 -(void)updateMedication:(id)sender
 {
-    [self.managedObjectContext save:nil];
     DetailViewController* vc = sender;
     Medication* med = vc.detailItem;
-    NSLog(@"%@", med.lastTaken);
+    NSError *error = nil;
+    // Save the object to persistent store
+    if (![[self managedObjectContext] save:&error]) {
+        NSLog(@"Can't Save! %@ %@", error, [error localizedDescription]);
+    }
 }
 
 
