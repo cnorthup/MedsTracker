@@ -1,15 +1,17 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="7549" systemVersion="14E11f" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="7701" systemVersion="14E11f" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
     <entity name="Medication" representedClassName="Medication">
         <attribute name="barcode" optional="YES" attributeType="Transformable" syncable="YES"/>
+        <attribute name="dosage" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
         <attribute name="lastTaken" optional="YES" attributeType="Date">
             <userInfo/>
         </attribute>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="pillsLeft" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="timeBetweenDoses" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
         <userInfo/>
     </entity>
     <elements>
-        <element name="Medication" positionX="261" positionY="189" width="128" height="105"/>
+        <element name="Medication" positionX="261" positionY="189" width="128" height="135"/>
     </elements>
 </model>

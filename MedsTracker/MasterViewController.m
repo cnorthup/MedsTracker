@@ -11,6 +11,7 @@
 #import "Medication.h"
 #import "NewPillViewController.h"
 
+
 @interface MasterViewController ()
 
 
@@ -45,10 +46,6 @@
     
     Medication * newMedication = [NSEntityDescription insertNewObjectForEntityForName:@"Medication" inManagedObjectContext:self.managedObjectContext];
     newMedication.name = @"";
-        
-    // If appropriate, configure the new managed object.
-    // Normally you should use accessor methods, but using KVC here avoids the need to add a custom class to the template.
-    //[newManagedObject setValue:[NSDate date] forKey:@"timeStamp"];
     
         
     // Save the context.
@@ -97,11 +94,15 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
     [self configureCell:cell atIndexPath:indexPath];
+    NSLog(@"%@", [self.fetchedResultsController sections][0]);
+    NSLog(@"%@", [self.fetchedResultsController managedObjectContext]);
+    NSLog(@"%@", [self.fetchedResultsController fetchedObjects]);
+    NSLog(@"%@", self.managedObjectContext);
+
     return cell;
 }
 
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
     return YES;
 }
 
@@ -112,8 +113,6 @@
             
         NSError *error = nil;
         if (![context save:&error]) {
-            // Replace this implementation with code to handle the error appropriately.
-            // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
             NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
             abort();
         }
@@ -134,29 +133,22 @@
     }
     
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
-    // Edit the entity name as appropriate.
     NSEntityDescription *entity = [NSEntityDescription entityForName:@"Medication" inManagedObjectContext:self.managedObjectContext];
     [fetchRequest setEntity:entity];
     
-    // Set the batch size to a suitable number.
     [fetchRequest setFetchBatchSize:20];
     
-    // Edit the sort key as appropriate.
     NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"name" ascending:NO];
     NSArray *sortDescriptors = @[sortDescriptor];
     
     [fetchRequest setSortDescriptors:sortDescriptors];
     
-    // Edit the section name key path and cache name if appropriate.
-    // nil for section name key path means "no sections".
     NSFetchedResultsController *aFetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:self.managedObjectContext sectionNameKeyPath:nil cacheName:@"Master"];
     aFetchedResultsController.delegate = self;
     self.fetchedResultsController = aFetchedResultsController;
     
 	NSError *error = nil;
 	if (![self.fetchedResultsController performFetch:&error]) {
-	     // Replace this implementation with code to handle the error appropriately.
-	     // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development. 
 	    NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
 	    abort();
 	}
@@ -231,9 +223,10 @@
 {
     NewPillViewController* sourceVC = sender.sourceViewController;
     Medication* savedPill = sourceVC.detailItem;
+    [savedPill setLastTaken:[NSDate new]];
+    [savedPill setTimeBetweenDoses:30];
     [self.managedObjectContext save:nil];
-    //Medication* med = sourceVC.detailItem;
-    //[self.managedObjectContext save:nil];
+
 }
 
 -(void)updateMedication:(id)sender
@@ -241,7 +234,6 @@
     DetailViewController* vc = sender;
     Medication* med = vc.detailItem;
     NSError *error = nil;
-    // Save the object to persistent store
     if (![[self managedObjectContext] save:&error]) {
         NSLog(@"Can't Save! %@ %@", error, [error localizedDescription]);
     }

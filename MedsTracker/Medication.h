@@ -16,6 +16,8 @@
 @property (nonatomic, retain) NSString * name;
 @property (nonatomic, retain) NSNumber * pillsLeft;
 @property (nonatomic, retain) id barcode;
+@property (nonatomic) double dosage;
+@property (nonatomic) double timeBetweenDoses;
 
 
 @end
@@ -26,6 +28,11 @@
 - (void)setName:(NSString *)name;
 - (void)setPillsLeft:(NSNumber *)pillsLeft;
 - (void)setBarcode:(id)barcode;
+- (void)setTimeBetweenDoses:(double)timeBetweenDoses;
+- (void)setDosage:(double)dosage;
+
+- (void)justTookPills;
+- (NSDate*)getDateWithCurrentTimeZone:(NSDate*)date;
 
 
 @end

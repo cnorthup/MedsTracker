@@ -38,13 +38,11 @@
     if (_detailItem != newDetailItem) {
         _detailItem = newDetailItem;
             
-        // Update the view.
         [self configureView];
     }
 }
 
 - (void)configureView {
-    // Update the user interface for the detail item.
     if (self.detailItem) {
         //self.detailDescriptionLabel.text = [[self.detailItem valueForKey:@"name"] description];
     }
@@ -74,7 +72,6 @@
     self.medication = self.detailItem;
     NSLog(@"%@", self.medication);
     [self updateDetailView];
-    // Do any additional setup after loading the view, typically from a nib.
     [self configureView];
 }
 
@@ -153,6 +150,7 @@
     if (time >= 12) {
         [UIView animateWithDuration:0.25 animations:^{
             self.takenPillImageView.backgroundColor = [UIColor redColor];
+            self.takenPillImageView.image = [UIImage imageNamed:@"takePic"];
         }];
         
     }
@@ -160,6 +158,8 @@
     {
         [UIView animateWithDuration:0.25 animations:^{
             self.takenPillImageView.backgroundColor = [UIColor greenColor];
+            self.takenPillImageView.image = [UIImage imageNamed:@"tookPic"];
+
         }];
     }
     [UIView animateWithDuration:0.5 animations:^{
@@ -194,7 +194,7 @@
             }];
             
         } else {
-            // The user denied access to the camera
+            // do something if i can't use the camera
         }
     }];
 }
@@ -208,8 +208,7 @@
         NSLog(@"%@", self.medication.lastTaken);
         int pills = self.medication.pillsLeft.intValue - (int)self.numberPillsTaking;
         [self.medication setPillsLeft:[NSNumber numberWithInt:pills]];
-        [self.medication setLastTaken:[NSDate new]];
-        NSLog(@"updated");
+        [self.medication justTookPills];
         [self.source updateMedication:self];
         [self updateDetailView];
     }
@@ -218,7 +217,6 @@
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 @end

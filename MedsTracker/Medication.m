@@ -15,5 +15,20 @@
 @dynamic name;
 @dynamic pillsLeft;
 @dynamic barcode;
+@dynamic timeBetweenDoses;
+@dynamic dosage;
+
+
+-(void)justTookPills
+{
+    [self setLastTaken:[self getDateWithCurrentTimeZone:[NSDate new]]];
+}
+
+- (NSDate*)getDateWithCurrentTimeZone:(NSDate*)date
+{
+    NSTimeInterval timeZoneSeconds = [[NSTimeZone systemTimeZone] secondsFromGMT];
+    NSDate *dateInLocalTimezone = [date dateByAddingTimeInterval:timeZoneSeconds];
+    return dateInLocalTimezone;
+}
 
 @end

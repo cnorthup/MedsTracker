@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14E11f" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="rS3-R9-Ivy">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E11f" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="rS3-R9-Ivy">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -161,8 +161,12 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Xg7-AU-cwG">
                                 <rect key="frame" x="117" y="191" width="57" height="49"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="49" id="Evw-57-DSE"/>
-                                    <constraint firstAttribute="width" constant="57" id="LtY-wJ-Lt5"/>
+                                    <constraint firstAttribute="height" constant="49" id="Evw-57-DSE">
+                                        <variation key="heightClass=regular-widthClass=compact" constant="40"/>
+                                    </constraint>
+                                    <constraint firstAttribute="width" constant="57" id="LtY-wJ-Lt5">
+                                        <variation key="heightClass=regular-widthClass=compact" constant="40"/>
+                                    </constraint>
                                 </constraints>
                                 <variation key="default">
                                     <mask key="constraints">
@@ -199,7 +203,7 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tmm-Gw-e0R">
+                            <pickerView contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Tmm-Gw-e0R">
                                 <rect key="frame" x="82" y="288" width="41" height="162"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="41" id="Qr8-H0-gve"/>
@@ -259,7 +263,9 @@
                             <constraint firstItem="Byz-kI-tmV" firstAttribute="leading" secondItem="MMQ-IT-qOo" secondAttribute="leadingMargin" id="Iz1-Yr-kas"/>
                             <constraint firstItem="xIL-hG-k4O" firstAttribute="top" secondItem="Lei-5M-9Gs" secondAttribute="bottom" constant="56" id="O2V-bZ-HgL"/>
                             <constraint firstItem="Tmm-Gw-e0R" firstAttribute="top" secondItem="Xg7-AU-cwG" secondAttribute="bottom" constant="48" id="Vd5-cn-6qd"/>
-                            <constraint firstItem="dEr-he-2DH" firstAttribute="top" secondItem="Xg7-AU-cwG" secondAttribute="bottom" constant="68" id="WWc-aK-jRX"/>
+                            <constraint firstItem="dEr-he-2DH" firstAttribute="top" secondItem="Xg7-AU-cwG" secondAttribute="bottom" constant="68" id="WWc-aK-jRX">
+                                <variation key="heightClass=regular-widthClass=compact" constant="77"/>
+                            </constraint>
                             <constraint firstItem="Lei-5M-9Gs" firstAttribute="top" secondItem="sLu-0N-afY" secondAttribute="bottom" constant="8" symbolic="YES" id="Wp3-xc-SJc"/>
                             <constraint firstItem="Xg7-AU-cwG" firstAttribute="leading" secondItem="Byz-kI-tmV" secondAttribute="trailing" constant="8" symbolic="YES" id="ZPc-LD-rmQ"/>
                             <constraint firstItem="xIL-hG-k4O" firstAttribute="baseline" secondItem="nKV-ul-spm" secondAttribute="baseline" id="eYA-k9-mzh"/>
@@ -276,7 +282,9 @@
                                 <variation key="heightClass=regular-widthClass=compact" constant="54"/>
                             </constraint>
                             <constraint firstItem="Xg7-AU-cwG" firstAttribute="top" secondItem="nKV-ul-spm" secondAttribute="bottom" constant="25" id="xMB-pK-8U5"/>
-                            <constraint firstItem="Byz-kI-tmV" firstAttribute="centerY" secondItem="Xg7-AU-cwG" secondAttribute="centerY" id="xpC-bH-cDM"/>
+                            <constraint firstItem="Byz-kI-tmV" firstAttribute="centerY" secondItem="Xg7-AU-cwG" secondAttribute="centerY" id="xpC-bH-cDM">
+                                <variation key="heightClass=regular-widthClass=compact" constant="4.5"/>
+                            </constraint>
                             <constraint firstItem="nKV-ul-spm" firstAttribute="leading" secondItem="xIL-hG-k4O" secondAttribute="trailing" id="z2f-jU-a4A"/>
                         </constraints>
                         <variation key="default">
