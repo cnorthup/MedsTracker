@@ -43,14 +43,56 @@
 
 - (void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification
 {
-    NSLog(@"recieved");
+    [UIApplication sharedApplication].applicationIconBadgeNumber++;
+    
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application
 {
-    //[[UIApplication sharedApplication] cancelAllLocalNotifications];
+    [[UIApplication sharedApplication] cancelAllLocalNotifications];
+    [UIApplication sharedApplication].applicationIconBadgeNumber = 0;
+    NSLog(@"tomorrow mid %@", [self tomorrowMidnightDateGMT]);
+    NSLog(@"today mid %@", [self todayMidnightDateGMT]);
+
 
 }
+
+-(NSDate*)tomorrowMidnightDateGMT
+{
+    NSDateComponents *dateComponents = [NSDateComponents new];
+    dateComponents.day = 1;
+    NSDate* selectedDate = [NSDate new];
+    NSDate *newDate = [[NSCalendar currentCalendar]dateByAddingComponents:dateComponents
+                                                                   toDate: selectedDate
+                                                                  options:0];
+    NSCalendar* calendar = [NSCalendar currentCalendar];
+    NSDateComponents* newDateComponents = [calendar components:( NSCalendarUnitYear | NSCalendarUnitMonth |  NSCalendarUnitDay ) fromDate:newDate];
+    newDateComponents.second = 0;
+    [newDateComponents setHour:0];
+    newDateComponents.minute = 0;
+    
+    NSDate* gmtMidnight = [[NSCalendar currentCalendar] dateFromComponents:newDateComponents];
+    return gmtMidnight;
+}
+
+-(NSDate*)todayMidnightDateGMT
+{
+    NSDateComponents *dateComponents = [NSDateComponents new];
+    dateComponents.day = 0;
+    NSDate* selectedDate = [NSDate new];
+    NSDate *newDate = [[NSCalendar currentCalendar]dateByAddingComponents:dateComponents
+                                                                   toDate: selectedDate
+                                                                  options:0];
+    NSCalendar* calendar = [NSCalendar currentCalendar];
+    NSDateComponents* newDateComponents = [calendar components:( NSCalendarUnitYear | NSCalendarUnitMonth |  NSCalendarUnitDay ) fromDate:newDate];
+    newDateComponents.second = 0;
+    [newDateComponents setHour:0];
+    newDateComponents.minute = 0;
+    
+    NSDate* gmtMidnight = [[NSCalendar currentCalendar] dateFromComponents:newDateComponents];
+    return gmtMidnight;
+}
+
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     [self saveContext];
@@ -58,7 +100,7 @@
 
 - (void)scheduleNotification
 {
-    NSLog(@"%@", self.managedObjectContext);
+    //NSLog(@"%@", self.managedObjectContext);
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
     NSEntityDescription *entity = [NSEntityDescription entityForName:@"Medication" inManagedObjectContext:self.managedObjectContext];
     [fetchRequest setEntity:entity];
@@ -73,20 +115,83 @@
     NSFetchedResultsController *aFetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:self.managedObjectContext sectionNameKeyPath:nil cacheName:@"Master"];
     NSError *error = nil;
     [aFetchedResultsController performFetch:&error];
-    NSLog(@"%@", [[[aFetchedResultsController fetchedObjects] firstObject]class]);
+
     for (Medication* med in [aFetchedResultsController fetchedObjects])
     {
-        UILocalNotification *locNot = [[UILocalNotification alloc] init];
-        locNot.alertAction = @"hey";
-        locNot.alertBody = @"hey";
-        locNot.timeZone = [NSTimeZone systemTimeZone];
-        locNot.fireDate = [NSDate dateWithTimeInterval:med.timeBetweenDoses sinceDate:med.lastTaken];
-        locNot.alertTitle = @"Meds";
-        [[UIApplication sharedApplication] scheduleLocalNotification: locNot];
-        NSLog(@"%@", locNot.fireDate);
+        for (int x = 0; x < med.timeTakePillArray.count; x++)
+        {
+            double timeInteveral = [[med.timeTakePillArray objectAtIndex:x] doubleValue];
+            if ([self checkIfTimeHasAlreadyPassed:timeInteveral] == YES)
+            {
+                if ([med.takenPillsArray objectAtIndex:x] == YES)
+                {
+                    NSLog(@"took this pill today");
+                    return;
+                }
+                else
+                {
+                    UILocalNotification *locNot = [[UILocalNotification alloc] init];
+                    locNot.alertAction = @"Scan";
+                    locNot.hasAction = YES;
+                    locNot.alertBody = [NSString stringWithFormat:@"Time to take %@", med.name];
+                    locNot.timeZone = [NSTimeZone systemTimeZone];
+                    locNot.fireDate = [NSDate dateWithTimeInterval:(timeInteveral) sinceDate:[self todayMidnightDateGMT]];
+                    locNot.alertTitle = @"Medication";
+                    locNot.soundName = UILocalNotificationDefaultSoundName;
+                    [[UIApplication sharedApplication] scheduleLocalNotification: locNot];
+                    
+                }
+            }
+            else
+            {
+                UILocalNotification *locNot = [[UILocalNotification alloc] init];
+                locNot.alertAction = @"Scan";
+                locNot.hasAction = YES;
+                locNot.alertBody = [NSString stringWithFormat:@"Time to take %@", med.name];
+                locNot.timeZone = [NSTimeZone systemTimeZone];
+                locNot.fireDate = [NSDate dateWithTimeInterval:(timeInteveral) sinceDate:[self todayMidnightDateGMT]];
+                locNot.alertTitle = @"Medication";
+                locNot.soundName = UILocalNotificationDefaultSoundName;
+                [[UIApplication sharedApplication] scheduleLocalNotification: locNot];
+                
+                UILocalNotification *locNotTomorrow = [[UILocalNotification alloc] init];
+                locNotTomorrow.alertAction = @"Scan";
+                locNotTomorrow.hasAction = YES;
+                locNotTomorrow.alertBody = [NSString stringWithFormat:@"Time to take %@", med.name];
+                locNotTomorrow.timeZone = [NSTimeZone systemTimeZone];
+                locNotTomorrow.fireDate = [NSDate dateWithTimeInterval:(timeInteveral) sinceDate:[self tomorrowMidnightDateGMT]];
+                locNotTomorrow.alertTitle = @"Medication";
+                locNotTomorrow.soundName = UILocalNotificationDefaultSoundName;
+                [[UIApplication sharedApplication] scheduleLocalNotification: locNotTomorrow];
+                
+                
+            }
+        }
 
     }
+}
 
+-(BOOL)checkIfTimeHasAlreadyPassed:(double)timeInteverval
+{
+    NSDate* medicineTime = [[self todayMidnightDateGMT] dateByAddingTimeInterval:timeInteverval];
+    NSDate* now = [NSDate new];
+    if ([medicineTime compare:now] == NSOrderedDescending) {
+        NSLog(@"MedicineTime is later than now");
+        return YES;
+    } else if ([medicineTime compare:now] == NSOrderedAscending) {
+        NSLog(@"medicineTime is earlier than now");
+        return NO;
+    } else {
+        NSLog(@"dates are the same");
+        return YES;
+    }
+}
+
+
+-(NSDate*)addTimeToDate:(NSDate*)date seconds:(NSInteger*)seconds hours:(NSInteger*)hours days:(NSInteger*)days
+{
+    NSDate* newDate = date;
+    return newDate;
 }
 
 #pragma mark - Core Data stack

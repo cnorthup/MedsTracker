@@ -15,8 +15,17 @@
 @dynamic name;
 @dynamic pillsLeft;
 @dynamic barcode;
-@dynamic timeBetweenDoses;
 @dynamic dosage;
+
+// needs alot of work, most likely throwing these out
+@dynamic timeSeperatingDoses;
+@dynamic nextPillTime;
+@dynamic timeBetweenReminder;
+@dynamic timesPerDay;
+
+@dynamic timeTakePillArray;
+@dynamic takenPillsArray;
+
 
 
 -(void)justTookPills
@@ -30,5 +39,7 @@
     NSDate *dateInLocalTimezone = [date dateByAddingTimeInterval:timeZoneSeconds];
     return dateInLocalTimezone;
 }
+
+
 
 @end

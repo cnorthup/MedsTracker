@@ -224,7 +224,7 @@
     NewPillViewController* sourceVC = sender.sourceViewController;
     Medication* savedPill = sourceVC.detailItem;
     [savedPill setLastTaken:[NSDate new]];
-    [savedPill setTimeBetweenDoses:30];
+    [savedPill setTimeBetweenReminder:30];
     [self.managedObjectContext save:nil];
 
 }
