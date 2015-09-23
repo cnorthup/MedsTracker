@@ -193,8 +193,9 @@
                 [self.scanner stopScanning];
             }];
             
-        } else {
-            // do something if i can't use the camera
+        } else
+        {
+            //let the user know that i need to use camera
         }
     }];
 }
