@@ -10,6 +10,7 @@
 #import "DetailViewController.h"
 #import "MasterViewController.h"
 #import "Medication.h"
+#import "MedsTabController.h"
 
 @interface AppDelegate ()
 
@@ -19,9 +20,24 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    /*
     UINavigationController *navigationController = (UINavigationController *)self.window.rootViewController;
     MasterViewController *controller = (MasterViewController *)navigationController.topViewController;
     controller.managedObjectContext = self.managedObjectContext;
+    if ([application respondsToSelector:@selector(registerUserNotificationSettings:)]) {
+        [application registerUserNotificationSettings:[UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeAlert|UIUserNotificationTypeBadge|UIUserNotificationTypeSound categories:nil]];
+    }
+    return YES;
+     */
+    
+    //UINavigationController *navigationController = (UINavigationController *)self.window.rootViewController;
+    //MedsTabController *controller = (MedsTabController *)navigationController.topViewController;
+    
+    MedsTabController *rootTabController = (MedsTabController*)self.window.rootViewController;
+    
+    //controller.managedObjectContext = self.managedObjectContext;
+    rootTabController.managedObjectContext = self.managedObjectContext;
+
     if ([application respondsToSelector:@selector(registerUserNotificationSettings:)]) {
         [application registerUserNotificationSettings:[UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeAlert|UIUserNotificationTypeBadge|UIUserNotificationTypeSound categories:nil]];
     }

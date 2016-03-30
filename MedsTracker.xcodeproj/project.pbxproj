@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		561CFBB21C99FDBB0043ACC7 /* MedsTabController.m in Sources */ = {isa = PBXBuildFile; fileRef = 561CFBB11C99FDBB0043ACC7 /* MedsTabController.m */; };
 		56CF274B1B027559000DE101 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 56CF274A1B027559000DE101 /* main.m */; };
 		56CF274E1B027559000DE101 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 56CF274D1B027559000DE101 /* AppDelegate.m */; };
 		56CF27511B027559000DE101 /* MedsTracker.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 56CF274F1B027559000DE101 /* MedsTracker.xcdatamodeld */; };
@@ -32,6 +33,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		561CFBB01C99FDBB0043ACC7 /* MedsTabController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MedsTabController.h; sourceTree = "<group>"; };
+		561CFBB11C99FDBB0043ACC7 /* MedsTabController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MedsTabController.m; sourceTree = "<group>"; };
 		56CF27451B027559000DE101 /* MedsTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MedsTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		56CF27491B027559000DE101 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		56CF274A1B027559000DE101 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -101,6 +104,8 @@
 			children = (
 				56CF274C1B027559000DE101 /* AppDelegate.h */,
 				56CF274D1B027559000DE101 /* AppDelegate.m */,
+				561CFBB01C99FDBB0043ACC7 /* MedsTabController.h */,
+				561CFBB11C99FDBB0043ACC7 /* MedsTabController.m */,
 				56CF27521B027559000DE101 /* MasterViewController.h */,
 				56CF27531B027559000DE101 /* MasterViewController.m */,
 				56CF27551B027559000DE101 /* DetailViewController.h */,
@@ -303,6 +308,7 @@
 				56CF277B1B027B0F000DE101 /* NewPillViewController.m in Sources */,
 				56CF274E1B027559000DE101 /* AppDelegate.m in Sources */,
 				56CF27511B027559000DE101 /* MedsTracker.xcdatamodeld in Sources */,
+				561CFBB21C99FDBB0043ACC7 /* MedsTabController.m in Sources */,
 				56CF274B1B027559000DE101 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
